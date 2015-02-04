@@ -1,0 +1,83 @@
+---
+- name: Install docker-py
+  pip: name=docker-py
+
+- file:
+    path: /home/core/dockerfiles/
+    state: directory
+    mode: 0755
+
+- file:
+    path: /home/core/dockerfiles/datadog
+    state: directory
+    mode: 0755
+
+
+- name: copy dockerfiles
+  copy:
+    src: dockerfiles
+    dest: /home/core/
+    mode: 0755
+    owner: core
+    group: core
+    directory_mode: yes
+
+
+# - file:
+#     path: /home/core/dockerfiles/mongo
+#     state: directory
+#     mode: 0755
+
+# - copy:
+#     src: mongo_add_datadog_user.js
+#     dest: /home/core/mongo_add_datadog_user.js
+
+
+
+# - name: launch mongo container
+#   docker:
+#     env:
+#       AUTH: no
+#     image: "tutum/mongodb"
+#     name : DockerMongo
+#     docker_api_version: "1.15"
+#     state: running
+
+
+- raw: docker kill datadog-agent
+  ignore_errors: yes
+
+- raw: docker rm datadog-agent
+  ignore_errors: yes
+
+# - name: Get DockerMongo IP
+#   raw: docker inspect DockerMongo | grep IPAddress | awk '{print $2}' | tr -d '",n'
+#   register: dockermongoip
+
+
+# - template: src=mongo.yaml dest=/home/core/dockerfiles/datadog force=yes
+- template: src=datadog.conf dest=/home/core/dockerfiles/datadog force=yes
+
+# - name: add Datadog User to mongo
+#   raw: sudo docker exec -i -t DockerMongo mongo admin --eval "db.addUser('datadog', 'password', true);"
+
+
+- name: check or build image
+  raw: docker build -t technovangelist/dd-agent /home/core/dockerfiles/datadog
+
+
+- name: launch datadog container
+  docker:
+    image: "technovangelist/dd-agent"
+    name: "datadog-agent"
+    docker_api_version: "1.15"
+    state: running
+    hostname: "{{ hostname }}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /proc/mounts:/host/proc/mounts:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+    env:
+      API_KEY: "{{ ddapikey }}"
+    privileged: yes
+

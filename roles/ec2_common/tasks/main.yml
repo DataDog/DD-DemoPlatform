@@ -1,0 +1,26 @@
+# Main tasks for all hosts
+- name: Check if EC2Common already processed
+  raw: stat $HOME/.ec2common
+  register: need_ec2common
+  ignore_errors: True
+
+- datadog_event:
+    title: "Performing EC2 Common Tasks: {{inventory_hostname}}"
+    priority: "normal"
+    alert_type: "warning"
+    tags: "DDDemoEvent"
+    text: "Initiated from Ansible"
+    api_key: "{{ ddapikey }}"
+  when: need_ec2common|failed
+
+- include: hostname.yml
+  when: need_ec2common|failed
+- include: sudoers.yml
+  when: need_ec2common|failed
+- include: packages.yml
+  when: need_ec2common|failed
+
+- file:
+    path: ~/.ec2common
+    state: touch
+  when: need_ec2common|failed

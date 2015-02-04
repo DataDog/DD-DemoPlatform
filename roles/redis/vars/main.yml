@@ -1,0 +1,2 @@
+redis_bind: 127.0.0.1
+api_key: "{{ lookup('env', 'DD_API_KEY') | mandatory }}"

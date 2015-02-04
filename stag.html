@@ -1,0 +1,305 @@
+<!doctype html>
+    <!--[if lt IE 7]> <html class="no-js ie6 ie" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js ie7 ie" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js ie8 ie" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/"> <![endif]-->
+    <!--[if IE 9]>    <html class="no-js ie9" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/"> <![endif]-->
+    <!--[if !IE]><!--> <html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/">
+    
+    <head>
+    <meta charset="utf-8">
+    
+    
+    
+	
+    <meta name="author" content="">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' /> 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/Datadog" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <script src="http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/js/libs/modernizr.js"></script>
+    
+    <!-- GA -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21102638-3']);
+      _gaq.push(['_setDomainName', '.datadoghq.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .fbox,
+    .fbox .info  {
+        border-radius: 6px;
+        behavior: url(http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/css/PIE.htc);
+        position:relative;
+        overflow:hidden;
+    }
+    .fbox .pages {
+        border-radius: 6px;
+        behavior: url(http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/css/PIE.htc);
+    }
+    .feature-box .pages {
+        background-image: url(http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/images/bg-feature-pages-ms.png) 
+    }
+    .feature-box2 .pages {
+        background-image: url(http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/images/bg-feature-pages2-ms.png) 
+    }
+    </style>
+    <![endif]-->
+    
+        
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Cloud Monitoring as a Service | Datadog</title>
+<meta name="robots" content="noindex,follow"/>
+<meta name="description" content="See metrics from all of your apps, tools &amp; services in one place with Datadog&#039;s cloud monitoring as a service solution. Try it for free."/>
+<link rel="canonical" href="http://datadog.staging.wpengine.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cloud Monitoring as a Service | Datadog" />
+<meta property="og:description" content="See metrics from all of your apps, tools &amp; services in one place with Datadog&#039;s cloud monitoring as a service solution. Try it for free." />
+<meta property="og:url" content="http://datadog.staging.wpengine.com/" />
+<meta property="og:site_name" content="Datadog" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/intel.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/salesforce.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/facebook.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/zendesk.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/coursera.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/chef1.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/ea.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/hpcloudservices.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/citrix.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/spotify.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/indeed-logo.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/08/pagerduty.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/Adobe.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/hearstmagazines.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/lonelyplanet.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/politico.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/MLS.png" />
+<meta property="og:image" content="https://www.datadoghq.com/wp-content/uploads/2014/05/statuspageio.png" />
+<meta property="og:image" content="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/graphicon.png" />
+<meta property="og:image" content="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/alerting.png" />
+<meta property="og:image" content="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/Collaboration.png" />
+<meta property="og:image" content="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/Built-for-Scale.png" />
+<script type="application/ld+json">{ "@context": "http://schema.org", "@type": "WebSite", "url": "http://datadog.staging.wpengine.com/", "potentialAction": { "@type": "SearchAction", "target": "http://datadog.staging.wpengine.com/?s={search_term}", "query-input": "required name=search_term" } }</script>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel='stylesheet' id='itempropwp-css'  href='http://datadog.staging.wpengine.com/wp-content/plugins/itempropwp/assets/css/itempropwp.css?ver=3.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bxslider-css-css'  href='http://datadog.staging.wpengine.com/wp-content/plugins/kiwi-logo-carousel/third-party/jquery.bxslider/jquery.bxslider.css?ver=4.0.1' type='text/css' media='' />
+<link rel='stylesheet' id='kiwi-logo-carousel-styles-css'  href='http://datadog.staging.wpengine.com/wp-content/plugins/kiwi-logo-carousel/custom-styles.css?ver=4.0.1' type='text/css' media='' />
+<!--[if lte IE 6]> <style type="text/css">.cantembedplus{display:none;}</style><![endif]--><script type='text/javascript' src='http://datadog.staging.wpengine.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://datadog.staging.wpengine.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<style>#responsive-menu .appendLink, #responsive-menu .responsive-menu li a, #responsive-menu #responsive-menu-title a,#responsive-menu .responsive-menu, #responsive-menu div, #responsive-menu .responsive-menu li, #responsive-menu{box-sizing: content-box !important;-moz-box-sizing: content-box !important;-webkit-box-sizing: content-box !important;-o-box-sizing: content-box !important}#click-menu #RMX{display: none;font-size: 24px;line-height: 30px;color: #FFFFFF !important}.RMPushOpen{width: 100% !important;overflow-x: hidden !important;height: 100% !important}.RMPushSlide{position: relative;left: 65%}#responsive-menu{position: fixed;overflow-y: auto;bottom: 0px;width: 65%;left: -65%;top: 0px;background: #774aa4;z-index: 9999;box-shadow: 0px 1px 8px #333333;font-size: 13px !important;max-width: 999px;display: none}#responsive-menu.admin-bar-showing{padding-top: 32px}#click-menu.admin-bar-showing{margin-top: 32px}#responsive-menu #rm-additional-content{padding: 10px 5% !important;width: 90% !important;color: #FFFFFF}#responsive-menu .appendLink{right: 0px !important;position: absolute !important;border: 1px solid #3C3C3C !important;padding: 12px 10px !important;color: #FFFFFF !important;background: #774aa4 !important;height: 20px !important;line-height: 20px !important;border-right: 0px !important}#responsive-menu .appendLink:hover{cursor: pointer;background: #ffcc00 !important;color: #FFFFFF !important}#responsive-menu .responsive-menu, #responsive-menu div, #responsive-menu .responsive-menu li,#responsive-menu{text-align: left !important}#responsive-menu .RMImage{vertical-align: middle;margin-right: 10px;display: inline-block}#responsive-menu.RMOpened{}#responsive-menu,#responsive-menu input{}#responsive-menu #responsive-menu-title{width: 95% !important;font-size: 14px !important;padding: 20px 0px 20px 5% !important;margin-left: 0px !important;background: #43494C !important;white-space: nowrap !important}#responsive-menu #responsive-menu-title,#responsive-menu #responsive-menu-title a{color: #FFFFFF !important;text-decoration: none !important;overflow: hidden !important}#responsive-menu #responsive-menu-title a:hover{color: #FFFFFF !important;text-decoration: none !important}#responsive-menu .appendLink,#responsive-menu .responsive-menu li a,#responsive-menu #responsive-menu-title a{transition: 1s all;-webkit-transition: 1s all;-moz-transition: 1s all;-o-transition: 1s all}#responsive-menu .responsive-menu{float: left !important;width: 100% !important;list-style-type: none !important;margin: 0px !important}#responsive-menu .responsive-menu li.current_page_item > a,#responsive-menu .responsive-menu li.current_page_item > .appendLink{background: #ffcc00 !important;color: #020202 !important}#responsive-menu.responsive-menu ul{margin-left: 0px !important}#responsive-menu .responsive-menu li{list-style-type: none !important;position: relative !important}#responsive-menu .responsive-menu ul li:last-child{padding-bottom: 0px !important}#responsive-menu .responsive-menu li a{padding: 12px 0px 12px 5% !important;width: 95% !important;display: block !important;height: 20px !important;line-height: 20px !important;overflow: hidden !important;white-space: nowrap !important;color: #FFFFFF !important;border-top: 1px solid #3C3C3C !important;text-decoration: none !important}#click-menu{text-align: center;cursor: pointer;font-size: 13px !important;display: none;position: fixed;right: 5%;top: 10px;color: #FFFFFF;background: #000000;padding: 5px;z-index: 9999}#responsive-menu #responsiveSearch{display: block !important;width: 95% !important;padding-left: 5% !important;border-top: 1px solid #3C3C3C !important;clear: both !important;padding-top: 10px !important;padding-bottom: 10px !important;height: 40px !important;line-height: 40px !important}#responsive-menu #responsiveSearchSubmit{display: none !important}#responsive-menu #responsiveSearchInput{width: 91% !important;padding: 5px 0px 5px 3% !important;-webkit-appearance: none !important;border-radius: 2px !important;border: 1px solid #3C3C3C !important}#responsive-menu .responsive-menu,#responsive-menu div,#responsive-menu .responsive-menu li{width: 100% !important;float: left !important;margin-left: 0px !important;padding-left: 0px !important}#responsive-menu .responsive-menu li li a{padding-left: 10% !important;width: 90% !important;overflow: hidden !important}#responsive-menu .responsive-menu li li li a{padding-left: 15% !important;width: 85% !important;overflow: hidden !important}#responsive-menu .responsive-menu li li li li a{padding-left: 20% !important;width: 80% !important;overflow: hidden !important}#responsive-menu .responsive-menu li li li li li a{padding-left: 25% !important;width: 75% !important;overflow: hidden !important}#responsive-menu .responsive-menu li a:hover{background: #ffcc00 !important;color: #FFFFFF !important;list-style-type: none !important;text-decoration: none !important}#click-menu .threeLines{width: 33px !important;height: 27px !important;margin: auto !important}#click-menu .threeLines .line{height: 5px !important;margin-bottom: 6px !important;background: #FFFFFF !important;width: 100% !important}#click-menu .threeLines .line.last{margin-bottom: 0px !important}@media only screen and ( min-width : 0px ) and ( max-width : 767px ){#click-menu{display: block}#menu-mainnav{display: none !important}#responsive-menu .responsive-menu li li .appendLink,#responsive-menu .responsive-menu li li li{display: none !important}}</style>	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+    </head>
+    
+    <body class="home page page-id-6 page-template page-template-front-php" itemscope itemtype="http://schema.org/WebPage">
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WDC8G6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WDC8G6');</script>
+    <!-- End Google Tag Manager -->
+    
+        <div class="container">
+        <header itemscope itemtype="http://schema.org/Organization">
+            <div class="wrapper fixed_width clearfix">
+                <a href="http://datadog.staging.wpengine.com" class="logo fir" title="DataDog" itemprop="name">Datadog</a>
+                <div class="fr">
+                    <ul id="menu-mainnav" class="menu"><li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://datadog.staging.wpengine.com/product/">Product</a></li>
+<li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538"><a href="http://datadog.staging.wpengine.com/pricing/">Pricing</a></li>
+<li id="menu-item-1350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1350"><a href="http://datadog.staging.wpengine.com/customers/">Customers</a></li>
+<li id="menu-item-92" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-92"><a href="https://app.datadoghq.com/account/login?next=%2Fevent%2Fstream">Log In</a></li>
+<li id="menu-item-2355" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2355"><a href="#">Free Trial</a></li>
+</ul>                    <a id="signup-button" class="btn-sign-up" title="Free Trial" href="https://app.datadoghq.com/signup">Free Trial</a>
+                </div>
+                            </div>
+        </header>
+         	<div id="banner-home" class="banner"><div class="fixed_width bannerwrap">
+<div class="banner-caption"><h1 class="dynamic_title">Powerful Cloud-Based Performance Monitoring Software</h1><p>Monitor performance metrics and events to find issues and improve your cloud, system, and applications.</p><div class="free-trialbutton"><a id="signup-button" class="btn-sign-up free-trial" title="Free Trial" href="https://app.datadoghq.com/signup">FREE TRIAL</a></div></div><div class="banner-video"><div class="bannervideowrap "><a class="various videoicon fancybox.iframe" href="//www.youtube.com/embed/mpuVItJSFMc?autoplay=1">cscs</a><p>Watch<strong> 5min</strong> Tour video</p></div></div><div class="clear"> </div></div></div><div class="customers clearfix carousel"><div class="wrapper fixed_width"><ul class="carousel-list"><li><a href="/customers"><img class="alignnone size-full wp-image-1332" src="https://www.datadoghq.com/wp-content/uploads/2014/05/intel.png" alt="customer-logo-intel" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1333" src="https://www.datadoghq.com/wp-content/uploads/2014/05/salesforce.png" alt="customer-logo-adobe" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1334" src="https://www.datadoghq.com/wp-content/uploads/2014/05/facebook.png" alt="customer-logo-ea" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1335" src="https://www.datadoghq.com/wp-content/uploads/2014/05/zendesk.png" alt="customer-logo-zendesk" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1336" src="https://www.datadoghq.com/wp-content/uploads/2014/05/coursera.png" alt="customer-logo-coursera" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1337" src="https://www.datadoghq.com/wp-content/uploads/2014/05/chef1.png" alt="customer-logo-pagerduty" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1338" src="https://www.datadoghq.com/wp-content/uploads/2014/05/ea.png" alt="customer-logo-salesforce" width="110" height="80" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1339" src="https://www.datadoghq.com/wp-content/uploads/2014/05/hpcloudservices.png" alt="customer-logo-hp" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1340" src="https://www.datadoghq.com/wp-content/uploads/2014/05/citrix.png" alt="customer-logo-hearst" width="110" height="80" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1341" src="https://www.datadoghq.com/wp-content/uploads/2014/05/spotify.png" alt="customer-logo-mls" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1342" src="https://www.datadoghq.com/wp-content/uploads/2014/05/indeed-logo.png" alt="customer-logo-indeed" width="110" height="80" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1343" style="margin-top: 20px;" src="https://www.datadoghq.com/wp-content/uploads/2014/08/pagerduty.png" alt="customer-logo-maxcdn" width="140" height="41" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1344" src="https://www.datadoghq.com/wp-content/uploads/2014/05/Adobe.png" alt="customer-logo-slashdot" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1346" src="https://www.datadoghq.com/wp-content/uploads/2014/05/hearstmagazines.png" alt="customer-logo-ziff" width="110" height="80" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1347" src="https://www.datadoghq.com/wp-content/uploads/2014/05/lonelyplanet.png" alt="customer-logo-lonelyplanet" width="96" height="70" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1348" src="https://www.datadoghq.com/wp-content/uploads/2014/05/politico.png" alt="customer-logo-politico" width="110" height="80" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1349" src="https://www.datadoghq.com/wp-content/uploads/2014/05/MLS.png" alt="customer-logo-53" width="82.5" height="60" /></a></li><li><a href="/customers"><img class="alignnone size-full wp-image-1350" src="https://www.datadoghq.com/wp-content/uploads/2014/05/statuspageio.png" alt="customer-logo-53" width="82.5" height="60" /></a></li></ul><nav></nav></div></div><section id="home" class="shortpad clearfix mbnone"><div class="fixed_width"><div class="main_con mb100px"><div class="right_con"><img class="alignnone size-full wp-image-2359" src="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/graphicon.png" alt="graphicon" width="284" height="208" /></div><div class="left_con"><h1 class="tittle">Graphs and Dashboards</h1><ul><li>Easily create dashboards with WYSIWYG drag-and-drop widgets</li><li>Build complex graphs to group and compare metrics an entire cloud <br />service OR any amount of individual servers</li><li>Collect, correlate, compare, and contrast metrics and events from <br />multiple systems</li><li>Gain deeper insight with composite metrics derived from<br /> mathematical formulas</li></ul></div><div class="clear"> </div></div><div class="main_con mb100px"><div class="right_con"><h1 class="tittle">Alerting</h1><ul><li>Alert on thresholds and rate of change for any metric collected by Datadog</li><li>Set alerts on an aggregated metric from multiple hosts OR individual<br /> devices/servers</li><li>Set alerts based on dynamically updating metadata tags, not individual hosts (unless you really want to)</li><li>Get context about any alert via email, SMS or through alerting apps<br /> like PagerDuty with contextual data (through notification method of <br />your choice)</li></ul></div><div class="left_con"><img class="alignnone size-full wp-image-2361" src="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/alerting.png" alt="alerting" width="273" height="263" /></div><div class="clear"> </div></div><div class="main_con mb100px"><div class="right_con"><img class="alignnone size-full wp-image-2362" src="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/Collaboration.png" alt="Collaboration" width="301" height="275" /></div><div class="left_con"><h1 class="tittle">Collaboration</h1><ul><li>Collaborate on real-time events and outages with social-media style commenting</li><li>Reference historical conversations in full granularity</li><li>Snapshot, annotate, and discuss unusual time series</li><li>Share read-only dashboards via public URLs</li><li>Integrate Datadog activity into chat portals like Slack, HipChat, or Campfire</li></ul></div><div class="clear"> </div></div><div class="main_con"><div class="right_con"><h1 class="tittle">Built for Scale</h1><ul><li>Hosted solution allows for effortless monitoring scalability</li><li>Add as many hosts, team members and custom metrics as you have</li><li>How many servers/team members can we take on? All of them!</li></ul></div><div class="left_con"><div class="builtforscale"><img class="alignnone size-full wp-image-2363" src="http://datadog.staging.wpengine.com/wp-content/uploads/2014/12/Built-for-Scale.png" alt="Built-for-Scale" width="345" height="251" /></div></div><div class="clear"> </div></div></div></section><section id="home" class="shortpad clearfix graphbg"><!--
+<div id="freetrail" class="clearfix graphbg">--><div class="wrapper fixed_width"><div class="graphbgwrap"><h1>Monitor and optimize your cloud, system, and application performance now!</h1><p><a id="signup-button" class="btn-sign-up free-trial" title="Free Trial" href="https://app.datadoghq.com/signup">FREE TRIAL</a></p><div class="clear"> </div></div></div></section>	
+	 <footer>
+        <div class="wrapper">
+            <div class="bottom-link clearfix">
+                <div class="footer_menu">
+                    <h4>Home</h4>
+                    <div class="menu-get-started-container"><ul id="menu-get-started" class="menu"><li id="menu-item-661" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661"><a href="https://app.datadoghq.com/account/login">Sign In</a></li>
+<li id="menu-item-660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="http://datadog.staging.wpengine.com/signup/">Sign Up</a></li>
+<li id="menu-item-662" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-662"><a href="https://app.datadoghq.com/policy/terms">Terms of Service</a></li>
+<li id="menu-item-663" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-663"><a href="https://app.datadoghq.com/policy/privacy">Privacy</a></li>
+<li id="menu-item-1856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1856"><a href="http://datadog.staging.wpengine.com/security/">Security</a></li>
+</ul></div>                </div>
+                <div class="footer_menu">
+                    <h4>Product</h4>
+                    <div class="menu-product-3-container"><ul id="menu-product-3" class="menu"><li id="menu-item-668" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-668"><a href="http://datadog.staging.wpengine.com/">Overview</a></li>
+<li id="menu-item-667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-667"><a href="http://datadog.staging.wpengine.com/product/">Features</a></li>
+<li id="menu-item-666" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-666"><a href="http://datadog.staging.wpengine.com/pricing/">Pricing</a></li>
+<li id="menu-item-665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-665"><a href="http://datadog.staging.wpengine.com/integrations/">Integrations</a></li>
+<li id="menu-item-664" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a href="http://datadog.staging.wpengine.com/alerts/">Alerts</a></li>
+<li id="menu-item-669" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-669"><a href="http://docs.datadoghq.com/">APIs</a></li>
+</ul></div>                </div>
+                <div class="footer_menu">
+                    <h4>Company</h4>
+                    <div class="menu-company-container"><ul id="menu-company" class="menu"><li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="http://datadog.staging.wpengine.com/about/">About Us</a></li>
+<li id="menu-item-659" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-659"><a href="http://jobs.datadoghq.com/">Careers</a></li>
+<li id="menu-item-725" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-725"><a href="http://datadog.staging.wpengine.com/contact/">Contact Us</a></li>
+<li id="menu-item-1011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1011"><a href="http://datadog.staging.wpengine.com/customers/">Customers</a></li>
+<li id="menu-item-706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-706"><a href="http://datadog.staging.wpengine.com/management-team/">Management Team</a></li>
+<li id="menu-item-819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-819"><a href="http://datadog.staging.wpengine.com/resources/">Resources</a></li>
+<li id="menu-item-851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="http://datadog.staging.wpengine.com/case-studies/">Case Studies</a></li>
+<li id="menu-item-1750" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1750"><a href="http://datadog.staging.wpengine.com/partners/">Partners</a></li>
+<li id="menu-item-752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-752"><a href="http://datadog.staging.wpengine.com/press/">Press</a></li>
+</ul></div>                </div>
+                <div class="footer_menu">
+                    <h4>Social Media</h4>
+                    <div class="menu-social-media-container"><ul id="menu-social-media" class="menu"><li id="menu-item-670" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-670"><a href="http://datadog.staging.wpengine.com/blog/">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-2434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2434"><a href="/jp">日本語</a></li>
+</ul>
+</li>
+<li id="menu-item-671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671"><a href="http://twitter.com/datadoghq">Twitter</a></li>
+<li id="menu-item-672" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-672"><a href="https://github.com/datadog">Github</a></li>
+</ul></div>                </div>
+            </div>
+            <div class="bottom-footer">
+            	<img src="http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/images/logo-footer.png" alt=""/>
+                Copyright &copy; 2015 Datadog, Inc. All rights reserved.
+                <a href="http://nytm.org/made" target="_blank">Made in NYC</a>
+            </div>
+        </div>
+    </footer>
+</div><!-- .container -->
+
+
+<div id="my_popup" style="display:none;">
+    <div class="popContainer">
+        <button class="my_popup_close">Close</button>
+        <h2>Get Started with Datadog</h2>
+        <iframe id="signUpIframe" src="https://app.datadoghq.com/signup_corp" width="540px" height="650" frameborder="0" scrolling="no"></iframe>
+        <script type="text/javascript">var host_url = 'https://app.datadoghq.com';</script>
+    </div>
+</div>
+
+<script src="http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/js/script.js"></script>
+
+    <script type="text/javascript" src="http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/js/jquery.carouFredSel-6.2.1-packed.js" ></script>
+    <script>
+        (function ($) {
+            $(document).ready(function(){
+                $('.carousel-list').carouFredSel({
+                    //all carousels
+                    pagination: '.carousel nav',
+
+                    //only on press carousel
+                    
+                    //last custom feature for all carousels does not have comma at the end
+                    auto	: {
+                        timeoutDuration: 5000
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+
+	<script type="text/javascript" src="http://datadog.staging.wpengine.com/wp-content/themes/datadog-v2.3/js/fancybox.v2.0.5.js" ></script>
+	<script>
+        (function ($) {
+            $(document).ready(function(){
+                // fancybox popup links
+				$(".various").fancybox({
+					maxWidth	: 800,
+					maxHeight	: 600,
+					fitToView	: false,
+					width		: '70%',
+					height		: '70%',
+					autoSize	: false,
+					closeClick	: false,
+				});
+            });
+        })(jQuery);
+    </script>
+
+	<script>
+		(function ($) {
+			$(document).ready(function () {
+				if( /\bgray\b/.test(window.location.search) ) {
+					$('body').addClass("gray");
+				}
+				if( /\bHD\b/.test(window.location.search) ) {
+					$('body').addClass("fullsize");
+				}
+			});
+		})(jQuery);
+	</script>
+
+	<script>
+		(function ($) {
+			$(document).ready(function () {
+				$(".dynamic_title").html("Test for Steve");
+			});
+		})(jQuery);
+	</script>
+
+<script>jQuery(document).ready(function(){jQuery(".kiwi-logo-carousel-default").bxSlider({mode:"horizontal",speed:500,infiniteLoop:true,hideControlOnEnd:false,captions:false,ticker:false,tickerHover:false,adaptiveHeight:false,responsive:true,pager:false,controls:true,autoControls:false,minSlides:1,maxSlides:4,moveSlides:1,slideWidth:200,auto:true,pause:4000,useCSS:false});jQuery(".kiwi-logo-carousel-client-logo").bxSlider({mode:"horizontal",speed:500,infiniteLoop:true,hideControlOnEnd:false,captions:false,ticker:false,tickerHover:false,adaptiveHeight:false,responsive:true,pager:false,controls:true,autoControls:false,minSlides:1,maxSlides:6,moveSlides:1,slideWidth:200,auto:true,pause:4000,useCSS:false});});</script><!-- Added by Responsive Menu Plugin created by Peter Featherstone -->
+
+<div id="responsive-menu" >
+
+    <div class="menu-company-container"><ul id="menu-company-1" class="responsive-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="http://datadog.staging.wpengine.com/about/">About Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-659"><a href="http://jobs.datadoghq.com/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-725"><a href="http://datadog.staging.wpengine.com/contact/">Contact Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1011"><a href="http://datadog.staging.wpengine.com/customers/">Customers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-706"><a href="http://datadog.staging.wpengine.com/management-team/">Management Team</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-819"><a href="http://datadog.staging.wpengine.com/resources/">Resources</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="http://datadog.staging.wpengine.com/case-studies/">Case Studies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1750"><a href="http://datadog.staging.wpengine.com/partners/">Partners</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-752"><a href="http://datadog.staging.wpengine.com/press/">Press</a></li>
+</ul></div>    
+</div>
+
+<!-- Added by Responsive Menu Plugin created by Peter Featherstone -->
+
+<div id="click-menu" >
+
+
+
+        <div class="threeLines" id="RM3Lines">       
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line last"></div>
+        </div>
+
+
+
+</div><script>var $RMjQuery = jQuery.noConflict();$RMjQuery( document ).ready( function(){var isOpen = false;$RMjQuery( document ).on( 'click', '#click-menu', function(){!isOpen ? openRM() : closeRM()});function openRM(){$RMjQuery( '#responsive-menu' ).css( 'display', 'block' );$RMjQuery( '#responsive-menu' ).addClass( 'RMOpened' );$RMjQuery( '#click-menu' ).addClass( 'click-menu-active' );$RMjQuery( '#responsive-menu' ).stop().animate({left: "0"}, 500, 'linear', function(){isOpen = true})}function closeRM(){$RMjQuery( '#responsive-menu' ).animate({left: "-65%"}, 500, 'linear', function(){$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );$RMjQuery( '#responsive-menu' ).removeClass( 'RMOpened' );$RMjQuery( '#click-menu' ).removeClass( 'click-menu-active' );isOpen = false})}$RMjQuery( window ).resize( function(){if( $RMjQuery( window ).width() > 767 ){if( $RMjQuery( '#responsive-menu' ).css( 'left' ) != '-65%' ){closeRM()}}});$RMjQuery( '#responsive-menu ul ul' ).css( 'display', 'none' );clickLink = '<span class=\"appendLink\">▼</span>';clickedLink = '<span class=\"appendLink rm-append-active\">▲</span>';excludeList = '.current-menu-item, .current-menu-ancestor, .current_page_ancestor';$RMjQuery( '#responsive-menu .menu-item-has-children' ).not( excludeList ).prepend( clickLink );$RMjQuery( '#responsive-menu .page_item_has_children.current-menu-item' ).prepend( clickedLink );$RMjQuery( '#responsive-menu .page_item_has_children.current-menu-ancestor' ).prepend( clickedLink );$RMjQuery( '#responsive-menu .menu-item-has-children.current-menu-item' ).prepend( clickedLink );$RMjQuery( '#responsive-menu .menu-item-has-children.current-menu-ancestor').prepend( clickedLink );$RMjQuery( '#responsive-menu .page_item_has_children' ).not( excludeList ).prepend( clickLink );$RMjQuery( '#responsive-menu .menu-item-has-children.current_page_ancestor' ).prepend( clickedLink );$RMjQuery( '#responsive-menu .page_item_has_children.current_page_ancestor' ).prepend( clickedLink );$RMjQuery( '.appendLink' ).on( 'click', function(){$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle();$RMjQuery( this ).html( $RMjQuery( this ).hasClass( 'rm-append-active' ) ? '▼' : '▲' );$RMjQuery( this ).toggleClass( 'rm-append-active' )});$RMjQuery( '.rm-click-disabled' ).on( 'click', function(){$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle();$RMjQuery( this ).siblings( '.appendLink' ).html( $RMjQuery( this ).hasClass( 'rm-append-active' ) ? '▼' : '▲' );$RMjQuery( this ).toggleClass( 'rm-append-active' )});$RMjQuery( '#responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );$RMjQuery( '#responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );$RMjQuery( '#responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );$RMjQuery( '#responsive-menu .current_page_ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );$RMjQuery( '#responsive-menu .current-menu-ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );$RMjQuery( '#responsive-menu .current-menu-item.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' )});</script><script type="text/javascript">
+<!--
+piCId = '2754';
+piAId = '39172';
+
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+-->
+</script><script type='text/javascript' src='http://datadog.staging.wpengine.com/wp-content/plugins/kiwi-logo-carousel/third-party/jquery.bxslider/jquery.bxslider.js?ver=4.0.1'></script>
+
+</body>
+</html>

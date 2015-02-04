@@ -1,0 +1,67 @@
+- name: Get instance information
+  debug: msg="{{ instance_values }}"
+
+- name: Create instance
+  ec2:
+    region: "{{ instance_values['region'] }}"
+    # zone: "{{ instance_values['zone'] }}"
+    keypair: "{{ instance_values['key_pair'] }}"
+    group: "{{ instance_values['security_groups'] }}"
+    instance_type: "{{ instance_values['instance_type'] }}"
+    image: "{{ instance_values['image_id'] }}"
+    wait: yes
+    instance_tags:
+      Name: "{{ instance_values['hostname'] }}"
+      DDDemo: True
+      DemoTag: "{{instance_values['demotag']}}"
+      Role: "{{ demorole|title }}"
+  when: ec2_instances.instances[instance_values['hostname']]|default("") == ""
+  register: ec2_info
+
+- datadog_event:
+    title: "Creating {{ instance_values['instance_type'] }} EC2 {{ demorole|title }} Instance on {{ instance_values['region'] }}: {{ instance_values['hostname'] }}"
+    priority: "normal"
+    alert_type: "warning"
+    tags: "DDDemoEvent"
+    text: "Initiated from Ansible"
+    api_key: "{{ dd_api_key }}"
+  when: ec2_info|changed
+
+- name: Wait for instances to listen on port 22
+  wait_for:
+    state: started
+    host: "{{ ec2_info.instances[0].public_dns_name }}"
+    port: 22
+  when: ec2_info|changed
+
+- name: Waiting an extra 2 seconds
+  pause: seconds=2
+  when: ec2_info|changed
+
+- name: Add new instance to ec2hosts group
+  add_host:
+    hostname: "{{ ec2_info.instances[0].public_ip }}"
+    # groupname: ec2hosts
+    groups: "ec2hosts, {{demorole}}hosts"
+    instance_id: "{{ ec2_info.instances[0].id }}"
+  when: ec2_info|changed
+
+- name: Add new instance to ubuntu group
+  add_host:
+    hostname: "{{ ec2_info.instances[0].public_ip }}"
+    # groupname: ec2hosts
+    groups: "ec2hosts, ubuntuhosts"
+    instance_id: "{{ ec2_info.instances[0].id }}"
+  when: ec2_info|changed and demorole!='docker'
+
+- name: Add new instance to docker group
+  add_host:
+    hostname: "{{ ec2_info.instances[0].public_ip }}"
+    # groupname: ec2hosts
+    groups: "ec2hosts, dockerhosts"
+    instance_id: "{{ ec2_info.instances[0].id }}"
+  when: ec2_info|changed and demorole=='docker'
+
+- name: Get ec2_info information
+  debug:
+    msg: "{{ ec2_info }}"

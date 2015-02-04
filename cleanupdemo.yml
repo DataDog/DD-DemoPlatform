@@ -1,0 +1,18 @@
+---
+- name: delete tests
+  hosts: "tag_DemoTag_{{ demotag }}"
+  connection: local
+  tasks:
+  - name: "Terminate"
+    ec2:
+      state: 'absent'
+      region: 'us-west-2'
+      instance_ids: '{{ ec2_id }}'
+
+  - datadog_event:
+      title: "Deleting instance on EC2: {{inventory_hostname}}"
+      priority: "normal"
+      alert_type: "warning"
+      tags: "DDDemoEvent"
+      text: "Initiated from Ansible"
+      api_key: "{{ lookup('env', 'DD_API_KEY') | mandatory }}"

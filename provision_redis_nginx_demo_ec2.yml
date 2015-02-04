@@ -1,0 +1,43 @@
+- hosts: redishosts
+  vars:
+    shortregion: "{{region}}"
+    demorole: "redis"
+    image_id: "{{awsregions[region]['standardimage']}}"
+    setnumber: "{{setnumber}}"
+    hostname: "Redis-{{region}}-{{setnumber}}"
+    ddapikey: "{{ dd_api_key }}"
+  pre_tasks:
+    - include_vars: demovars.yml
+  roles:
+    - ec2_common
+    - redis
+
+- hosts: webhosts
+  vars:
+    shortregion: "{{region}}"
+    demorole: "web"
+    image_id: "{{awsregions[region]['standardimage']}}"
+    setnumber: "{{setnumber}}"
+    hostname: "Web-{{region}}-{{setnumber}}"
+    ddapikey: "{{ dd_api_key }}"
+  pre_tasks:
+    - include_vars: demovars.yml
+  roles:
+    - ec2_common
+    - apache
+
+
+- hosts: dockerhosts
+  gather_facts: no
+  vars:
+    shortregion: "{{region}}"
+    demorole: "web"
+    image_id: "{{awsregions[region]['standardimage']}}"
+    setnumber: "{{setnumber}}"
+    hostname: "Docker-{{region}}-{{setnumber}}"
+    ddapikey: "{{ dd_api_key }}"
+  roles:
+    - docker_common
+    - docker_redis
+
+

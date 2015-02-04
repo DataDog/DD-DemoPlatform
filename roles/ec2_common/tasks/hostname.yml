@@ -1,0 +1,18 @@
+- lineinfile:
+    dest: "/etc/hosts"
+    regexp: "^127.0.0.1"
+    line: "127.0.0.1 localhost {{hostname}}"
+  remote_user: ec2-user
+  sudo: yes
+  when: ansible_hostname != hostname
+
+
+- name: Setup hostname
+  # shell: "hostname {{ hostname }}"
+  hostname:
+    name: "{{hostname}}"
+  remote_user: ec2-user
+  sudo: yes
+  when: ansible_hostname != hostname
+
+

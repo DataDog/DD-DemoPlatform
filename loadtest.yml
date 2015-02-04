@@ -1,0 +1,39 @@
+# - name: test mongo
+#   hosts:
+#     - mongohosts
+#   tasks:
+#     - shell: "echo '{nThreads:32,fileSizeMB:1000,r:true,w:true, sleepMicros: 100}' | mongoperf&"
+
+# - name: test mongo on docker
+#   hosts:
+#     - mongohosts
+#   tasks:
+#     - shell: "sudo docker exec -i -t DockerMongo echo '{nThreads:32,fileSizeMB:1000,r:true,w:true, sleepMicros: 100}' | mongoperf&"
+
+- name: test redis
+  hosts:
+    - redishosts
+  tasks:
+    - raw: "redis-benchmark -q -n 1000000&"
+    - datadog_event:
+        title: "Running Redis Benchmark on EC2 host: {{inventory_hostname}}"
+        priority: "normal"
+        alert_type: "warning"
+        tags: "DDDemoEvent"
+        text: "Initiated from Ansible"
+        api_key: "{{lookup('env', 'DD_API_KEY')}}"
+
+
+- name: test redis on docker
+  hosts:
+    - dockerhosts
+  tasks:
+    - raw: "sudo docker exec -i -t DockerRedis redis-benchmark -q -n 1000000&"
+    - datadog_event:
+        title: "Running Redis Benchmark on Docker Container: {{inventory_hostname}}"
+        priority: "normal"
+        alert_type: "warning"
+        tags: "DDDemoEvent"
+        text: "Initiated from Ansible"
+        api_key: "{{lookup('env', 'DD_API_KEY')}}"
+

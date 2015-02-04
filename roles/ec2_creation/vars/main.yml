@@ -1,0 +1,14 @@
+
+instance_values:
+  instance_type: "{{ instancetype }}"
+  region: "{{ awsregions[shortregion]['regionname']  }}"
+  key_pair: "{{ awsregions[shortregion]['key_pair'] }}"
+  image_id: "{{image_id}}"
+  standard_image_id: "{{ awsregions[shortregion]['standardimage']  }}"
+  coreos_image_id: "{{ awsregions[shortregion]['dockerimage']  }}"
+  security_groups: "{{ awsregions[shortregion]['security_groups']  }}"
+  ec2_user: "{{ ec2_user }}"
+  ec2_coreos_user: "{{ ec2_coreos_user  }}"
+  demotag: "{{ demotag }}"
+  hostname: "{{hostnamebase}}{{setnumber}}"
+

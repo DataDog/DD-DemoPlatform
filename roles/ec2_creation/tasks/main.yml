@@ -1,0 +1,6 @@
+- include_vars: demovars.yml
+
+- include: gather_ec2_facts.yml
+
+- include: create_instance.yml
+

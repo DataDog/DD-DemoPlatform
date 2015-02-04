@@ -1,0 +1,57 @@
+- name: Check if Redis already processed
+  raw: stat $HOME/.redis
+  register: need_redis
+  ignore_errors: True
+
+
+- datadog_event:
+    title: "Installing Redis on EC2: {{inventory_hostname}}"
+    priority: "normal"
+    alert_type: "warning"
+    tags: "DDDemoEvent"
+    text: "Initiated from Ansible"
+  when: need_redis|failed
+
+
+- name: Add the Redis PPA
+  apt_repository: repo='ppa:rwky/redis' update_cache=yes
+  sudo: true
+  when: need_redis|failed
+
+- name: Install Redis from PPA
+  apt: pkg=redis-server state=installed
+  sudo: true
+  register: redisinstalled
+  when: need_redis|failed
+
+- name: Start Redis
+  sudo: true
+  service: name=redis-server state=started
+  when: redisinstalled|changed
+
+- name: setup datadog integration
+  sudo: true
+  copy:
+    src: dd-redis-conf
+    dest: /etc/dd-agent/conf.d/redisdb.yaml
+    owner: dd-agent
+    group: root
+    mode: 0644
+  when: redisinstalled|changed
+
+- name: ensure logs are correct permissions
+  file: path=/var/log/datadog/supervisord.log owner=dd-agent group=nogroup mode=0644
+  sudo: yes
+  when: redisinstalled|changed
+
+- name: restart DataDog
+  sudo: yes
+  service:
+    name: datadog-agent
+    state: restarted
+  when: redisinstalled|changed
+
+- file:
+    path: ~/.redis
+    state: touch
+  when: need_redis|failed

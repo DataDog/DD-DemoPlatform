@@ -1,0 +1,48 @@
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    shortregion: "{{region}}"
+    demorole: "redis"
+    image_id: "{{awsregions[region]['standardimage']}}"
+    setnumber: "{{setnumber}}"
+    hostnamebase: "{{ demorole|string|title }}-{{region}}-"
+  pre_tasks:
+    - include_vars: demovars.yml
+  roles:
+    - ec2_creation
+
+
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    shortregion: "{{region}}"
+    demorole: "web"
+    image_id: "{{awsregions[region]['standardimage']}}"
+    setnumber: "{{setnumber}}"
+    hostnamebase: "{{ demorole|string|title }}-{{region}}-"
+  pre_tasks:
+    - include_vars: demovars.yml
+  roles:
+    - ec2_creation
+
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    shortregion: "{{region}}"
+    demorole: "docker"
+    image_id: "{{awsregions[region]['dockerimage']}}"
+    setnumber: "{{setnumber}}"
+    hostnamebase: "{{ demorole|string|title }}-{{region}}-"
+  pre_tasks:
+    - include_vars: demovars.yml
+  roles:
+    - ec2_creation
+
+
+

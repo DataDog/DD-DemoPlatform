@@ -1,0 +1,65 @@
+- name: Check if DockerRedis already processed
+  raw: stat $HOME/.dockerredis
+  register: need_docker_redis
+  ignore_errors: True
+
+- datadog_event:
+    title: "Creating Docker Redis Container: {{inventory_hostname}}"
+    priority: "normal"
+    alert_type: "warning"
+    tags: "DDDemoEvent"
+    text: "Initiated from Ansible"
+    api_key: "{{ ddapikey }}"
+  when: need_docker_redis|failed
+
+- name: launch redis container
+  docker:
+    image: "redis"
+    name: DockerRedis
+    docker_api_version: "1.15"
+    state: running
+  when: need_docker_redis|failed
+
+- name: Get DockerRedis IP
+  raw: docker inspect DockerRedis | grep IPAddress | awk '{print $2}' | tr -d '",n'
+  register: dockerredisip
+  when: need_docker_redis|failed
+
+- template: src=redisdb.yaml dest=/home/core/dockerfiles/datadog force=yes
+  when: need_docker_redis|failed
+# - template: src=datadog.conf dest=/home/core/dockerfiles/datadog force=yes
+
+- raw: docker kill datadog-agent
+  ignore_errors: yes
+  when: need_docker_redis|failed
+
+- raw: docker rm datadog-agent
+  ignore_errors: yes
+  when: need_docker_redis|failed
+
+
+- name: check or build image
+  raw: docker build -t technovangelist/dd-agent /home/core/dockerfiles/datadog
+  when: need_docker_redis|failed
+
+
+- name: launch datadog container
+  docker:
+    image: "technovangelist/dd-agent"
+    name: "datadog-agent"
+    docker_api_version: "1.15"
+    state: running
+    hostname: "{{ hostname }}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /proc/mounts:/host/proc/mounts:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+    env:
+      API_KEY: "{{ ddapikey }}"
+    privileged: yes
+  when: need_docker_redis|failed
+
+- file:
+    path: ~/.dockerredis
+    state: touch
+  when: need_docker_redis|failed

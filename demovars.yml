@@ -1,0 +1,21 @@
+awsregions:
+  uswest2:
+    regionname: "us-west-2"
+    standardimage: "ami-3d50120d"
+    dockerimage: "ami-bd2d728d"
+    key_pair: "datadog-demo"
+    security_groups: matt-test-group
+  useast1:
+    regionname: "us-east-1"
+    standardimage: "ami-9eaa1cf6"
+    dockerimage: "ami-3c750854"
+    key_pair: "datadog-demo"
+    security_groups: matt-test-group
+
+ec2_user: ubuntu
+ec2_coreos_user: core
+instancetype: "t2.micro"
+
+demotag: "mdwtest"
+
+dd_api_key: "{{ lookup('env', 'DD_API_KEY') | mandatory }}"

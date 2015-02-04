@@ -1,0 +1,10 @@
+- name: Install CloudConfig
+  template:
+    src: coreos_cloud_init
+    dest: /home/core/cloudconfig
+
+- name: Setup docker hostname
+  raw: coreos-cloudinit --from-file=/home/core/cloudconfig
+  sudo: yes
+
+

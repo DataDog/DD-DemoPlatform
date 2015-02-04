@@ -1,0 +1,29 @@
+- name: Check if Apache already processed
+  raw: stat $HOME/.apache
+  register: need_apache
+  ignore_errors: True
+
+
+- datadog_event:
+    title: "Installing Apache on EC2: {{inventory_hostname}}"
+    priority: "normal"
+    alert_type: "warning"
+    tags: "DDDemoEvent"
+    text: "Initiated from Ansible"
+    api_key: "{{ ddapikey }}"
+  when: need_apache|failed
+
+- apt: state=present name=apache2
+  sudo: yes
+  when: need_apache|failed
+- apache2_module: state=present name=status
+  sudo: yes
+  when: need_apache|failed
+- service: name=apache2 state=restarted
+  sudo: yes
+  when: need_apache|failed
+
+- file:
+    path: ~/.apache
+    state: touch
+  when: need_apache|failed

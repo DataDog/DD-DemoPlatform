@@ -1,0 +1,17 @@
+# - hosts: local
+#   connection: local
+#   gather_facts: false
+#   roles:
+#     - ec2_creation
+#   when: {{ boxes}}
+
+- hosts: local
+  connection: local
+  roles:
+    - { role: ec2_creation, when: {{boxes.parent == 'ec2'}}}
+
+  # tasks:
+  #   roles: ec2_creation
+  #   when: item.parent=='ec2'
+  #   with_items: boxes
+

@@ -1,0 +1,13 @@
+#cloud-config
+
+hostname: {{hostname}}
+coreos:
+  etcd:
+    name: {{hostname}}
+
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+

@@ -1,0 +1,7 @@
+init_config:
+
+instances:
+   -   host: {{dockerredisip.stdout_lines[0]}}
+       port: 6379
+       tags:
+            - demohost:docker

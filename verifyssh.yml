@@ -1,0 +1,8 @@
+- hosts: tag_DDDemo_True
+  gather_facts: no
+  tasks:
+
+    - name: Verify SSH Connectivity
+      raw: ls
+      ignore_errors: True
+
